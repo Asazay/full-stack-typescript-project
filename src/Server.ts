@@ -1,5 +1,6 @@
 import express, {Request, Response, NextFunction} from 'express'
 import employeesRouter from "../api/empl/Employee.route";
+import reportsRouter from "../api/reports/Reports.route";
 
 const port = 3000;
 
@@ -8,6 +9,8 @@ export class Server{
 
     startServer(){
         this.app.use('/employees', employeesRouter)
+
+        this.app.use('/reports', reportsRouter)
 
         this.app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
             console.error(err.stack)

@@ -1,8 +1,10 @@
 import {Router, Request, Response, NextFunction} from 'express'
 import {Employee} from "./Employee.model";
 import {EmployeeDataAccess} from "./EmployeeDataAccess";
+import {injectDependency} from "../../src/shared/Container";
 
 const dataAccess = new EmployeeDataAccess()
+injectDependency('EmployeeDataAccess',dataAccess)
 
 export async function getAll(req: Request, res: Response<Employee[]>, next: NextFunction){
     try{
