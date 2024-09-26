@@ -1,5 +1,19 @@
 ### GET request
 @baseUrl = http://localhost:3000
-GET {{baseUrl}}/employees/12345
+GET {{baseUrl}}/employees/
+
+###
+GET {{baseUrl}}/employees/7355a654b62c687f97eb
+
+###
+POST {{baseUrl}}/employees/
+Content-Type: application/json
+
+{
+  "name": "John",
+  "position": "Manager",
+  "salary": 50000,
+  "other": "stuff"
+}
 
 ###
